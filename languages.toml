@@ -1,0 +1,32 @@
+[[language]]
+name = "go"
+scope = "source.go"
+injection-regex = "go"
+file-types = ["go"]
+shebangs = ["go"]
+roots = ["go.mod", "go.work"]
+auto-format = true
+comment-token = "//"
+formatter = { command = "goimports" }
+language-servers = [ "gopls" ]
+indent = { tab-width = 4, unit = "\t" }
+
+[language-server.gopls]
+command = "gopls"
+args = ["serve"]
+environment = { GOFLAGS = "-mod=readonly", GOPACKAGESDRIVER = "off" }
+
+[language-server.gopls.config]
+usePlaceholders = true
+completeUnimported = true
+staticcheck = true
+matcher = "Fuzzy"
+analyses = { unusedparams = true, shadow = true }
+codelenses = { generate = true, gc_details = true, test = true, tidy = true }
+
+[[language]]
+name = "yaml"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "yaml"] }
+
+
