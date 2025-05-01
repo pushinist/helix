@@ -1,8 +1,8 @@
 # theme = "kanagawa"
 # theme = "tokyonight"
 theme = "non_background"
-# theme = "claude-dark"
 # theme = "catppuccin_mocha"
+
 [editor]
 line-number = "relative"
 mouse = false
@@ -12,8 +12,8 @@ auto-format = true
 cursorline = true
 auto-completion = true
 true-color = true
-gutters = ["diagnostics", "line-numbers"]
 completion-trigger-len = 2
+
 
 [editor.cursor-shape]
 insert = "bar"
@@ -33,7 +33,7 @@ wrap-indicator = "↩️ "
 # '<' = '>'
 
 [editor.whitespace.render]
-# space = "all"
+space = "all"
 tab = "all"
 newline = "none"
 
@@ -73,10 +73,6 @@ skip-levels = 1
 C-r = ":config-reload"
 
 X = "extend_line_above" # Shift+x to select the whole line above
-# "tab" = "goto_next_function" # Select and jump to the next function via Treesitter
-# "S-tab" = "goto_prev_function" # Select and jump to the previous function via Treesitter 
-C-p = ["move_line_up", "scroll_up"]
-C-n = ["move_line_down", "scroll_down"]
 "tab" = "goto_next_buffer"
 "S-tab" = "goto_previous_buffer"
 
@@ -86,14 +82,7 @@ space.x = "code_action"
 C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 
-# Duplicate lines up/down
-# Also in [keys.insert]
-C-K = ["normal_mode", "extend_to_line_bounds", "yank", "open_below", "replace_with_yanked", "collapse_selection"]
-C-J = ["normal_mode", "extend_to_line_bounds", "yank", "open_above", "replace_with_yanked", "collapse_selection"]
 
-S-space = ["half_page_up"]
-
-space."." = "file_picker_in_current_buffer_directory"
 
 [keys.insert]
 C-space = "completion"
